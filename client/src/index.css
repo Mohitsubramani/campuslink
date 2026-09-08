@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-surface: #ECEFF4;
+    --color-ink: #1D2233;
+    --color-ink-soft: #656C80;
+    --color-teal: #1FC8B8;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-surface);
+    color: var(--color-ink);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+/* Glassmorphism Surface */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+.glass-nav {
+  background: rgba(236, 239, 244, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Neumorphic Soft Card */
+.neu-card {
+  background: #ECEFF4;
+  box-shadow: 8px 8px 20px #d1d5db, -8px -8px 20px #ffffff;
+  border-radius: 1rem;
+}
+
+.neu-input {
+  background: #ECEFF4;
+  box-shadow: inset 3px 3px 6px #d1d5db, inset -3px -3px 6px #ffffff;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.neu-input:focus {
+  outline: none;
+  border-color: #6C63FF;
+  box-shadow: inset 1px 1px 3px #d1d5db, inset -1px -1px 3px #ffffff, 0 0 0 3px rgba(108, 99, 255, 0.15);
+}
+
+/* CTA Gradient Button */
+.btn-gradient {
+  background: linear-gradient(135deg, #6C63FF 0%, #8F7BFF 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(108, 99, 255, 0.35);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-gradient:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(108, 99, 255, 0.45);
+}
+
+.btn-gradient:active {
+  transform: translateY(0);
+}
