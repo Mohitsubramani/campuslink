@@ -148,9 +148,23 @@ export default function PostItemPage() {
           
           {/* Image Upload Area */}
           <div>
-            <label className="block text-xs font-semibold text-[#1D2233] mb-2 uppercase tracking-wider">
-              Item Photo (Optional, JPG/PNG under 5MB)
-            </label>
+            <div className="flex items-center justify-between mb-2">
+              <label className="block text-xs font-semibold text-[#1D2233] uppercase tracking-wider">
+                Item Photo (Optional)
+              </label>
+              <span className="text-xs text-[#6C63FF] font-medium">
+                Photo not required to post!
+              </span>
+            </div>
+
+            {/* Helpful tip if no photo available */}
+            <div className="mb-3 p-3.5 rounded-2xl bg-purple-50/80 border border-purple-100 text-xs text-[#6C63FF] flex items-start gap-2.5">
+              <span className="text-base">💡</span>
+              <div>
+                <strong className="font-bold block text-gray-800">Don't have a photo of your lost item?</strong>
+                No problem! Photos are <strong>100% optional</strong>. Just describe distinguishing features (e.g., <em>"Blue Milton 1L bottle with a Marvel sticker"</em>) and our Gemini AI engine will automatically pair your description with items found across campus!
+              </div>
+            </div>
             
             {imagePreview ? (
               <div className="relative rounded-2xl overflow-hidden border border-white/80 max-h-64 bg-gray-100 flex items-center justify-center">
@@ -164,10 +178,10 @@ export default function PostItemPage() {
                 </button>
               </div>
             ) : (
-              <label className="flex flex-col items-center justify-center p-8 border-2 border-dashed border-gray-300 rounded-2xl neu-input cursor-pointer hover:border-[#6C63FF] transition-colors">
-                <Upload className="w-10 h-10 text-[#6C63FF] mb-2" />
-                <span className="text-sm font-semibold text-[#1D2233]">Click to upload item image</span>
-                <span className="text-xs text-[#656C80] mt-1">Supports JPG, PNG, WEBP</span>
+              <label className="flex flex-col items-center justify-center p-6 border-2 border-dashed border-gray-300 rounded-2xl neu-input cursor-pointer hover:border-[#6C63FF] transition-colors">
+                <Upload className="w-8 h-8 text-[#6C63FF] mb-2" />
+                <span className="text-sm font-semibold text-[#1D2233]">Upload photo if available (Optional)</span>
+                <span className="text-xs text-[#656C80] mt-0.5">JPG, PNG, WEBP under 5MB</span>
                 <input
                   type="file"
                   accept="image/jpeg,image/png,image/webp"
